@@ -25,11 +25,18 @@ class ProductRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->isMethod('patch')) {
+            return [
+                'qty'    => 'required|integer'
+            ];
+        }
+
         return [
-            'shopping_list_id'  => 'exists:shopping_lists,id|integer',
+            'shopping_list_id'  => 'required|exists:shopping_lists,id|integer',
             'name'              => 'required|max:200|min:1',
             'qty'               => 'required|integer'
         ];
+
     }
 
     protected function failedValidation(Validator $validator) {

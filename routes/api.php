@@ -48,6 +48,7 @@ Route::prefix('products')->group(function () {
     Route::group(['middleware' => ['jwt.auth']], function() {
         Route::post('/', [ProductController::class, 'store'])->name('product.store');
         Route::put('/{id}', [ProductController::class, 'update'])->name('product.update');
+        Route::patch('/{id}', [ProductController::class, 'update'])->name('product.patch');
         Route::delete('/{id}', [ProductController::class, 'destroy'])->name('product.delete');
     });
 });

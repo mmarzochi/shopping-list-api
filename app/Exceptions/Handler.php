@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use ErrorException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +53,18 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $exception)
     {
+
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            return response()->json(['message' => $exception->getMessage()], 405);
+        }
+        
+        if ($exception instanceof ModelNotFoundException) {
+            return response()->json(['message' => $exception->getMessage()], 404);
+        }
+
+        if($exception instanceof ErrorException){
+            return response()->json(['message' => 'One or more params are invalid. Check them out in the docs and try again.'], 400);
+        }
 
         if ($request->is('api/*')){
             return response()->json(['message' => $exception->getMessage()], 401);

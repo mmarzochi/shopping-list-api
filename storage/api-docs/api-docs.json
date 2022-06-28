@@ -180,56 +180,6 @@
                     }
                 }
             },
-            "put": {
-                "tags": [
-                    "Products"
-                ],
-                "summary": "Update a product",
-                "description": "This API helps you to update a product.",
-                "operationId": "6a7e11900844cd85cff66e662b82bd4c",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Unique identifier for the resource",
-                        "required": true,
-                        "style": "form",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "properties": {
-                                    "shopping_list_id": {
-                                        "type": "integer"
-                                    },
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "qty": {
-                                        "type": "integer"
-                                    }
-                                },
-                                "type": "object"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Successful operation"
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            },
             "delete": {
                 "tags": [
                     "Products"
@@ -249,6 +199,50 @@
                         }
                     }
                 ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Update a product quantity",
+                "description": "This API helps you to update a product quantity.",
+                "operationId": "f0caf1fe47821e6aad5d0c767b7476eb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Unique identifier for the resource",
+                        "required": true,
+                        "style": "form",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "qty": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Successful operation"

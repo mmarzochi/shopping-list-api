@@ -42,6 +42,7 @@ abstract class AbstractRepository
 
     public function destroy(Int $id)
     {
-        return $this->model->destroy($id);
+        $record = $this->getById($id);
+        return $record->delete();
     }
 }

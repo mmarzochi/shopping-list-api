@@ -129,6 +129,39 @@ class ProductController extends Controller
      * )
      */
 
+     /**
+     * @OA\Patch(
+     *      path="/api/products/{id}",
+     *      summary="Update a product quantity",
+     *      tags={"Products"},
+     *      description="This API helps you to update a product quantity.",
+     *      security={{ "bearerAuth": { }}},
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *      ),
+     *      @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="Unique identifier for the resource",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer"
+     *         ),
+     *         style="form"
+     *      ),
+     *       @OA\RequestBody(
+     *         @OA\MediaType(
+     *            mediaType="application/json",
+     *            @OA\Schema(
+     *               type="object",
+     *               @OA\Property(property="qty", type="integer")
+     *            )
+     *           )
+     *       ),
+     * )
+     */
+
     public function update(ProductRequest $request, $id)
     {
         $data = $request->all();
@@ -161,6 +194,6 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        return response()->json($this->productRepository->destroy($id));
+        return response()->json(['deleted' => $this->productRepository->destroy($id)]);
     }
 }

@@ -189,6 +189,6 @@ class ShoppingListController extends Controller
 
     public function destroy($id)
     {
-        return response()->json($this->shoppingListRepository->destroy($id));
+        return response()->json(['deleted' => $this->shoppingListRepository->destroy($id)]);
     }
 }
