@@ -79,9 +79,9 @@ class ProductController extends Controller
      *            mediaType="application/json",
      *            @OA\Schema(
      *               type="object",
-     *               @OA\Property(property="shopping_list_id", type="integer"),
-     *               @OA\Property(property="name", type="string"),
-     *               @OA\Property(property="qty", type="integer")
+     *               @OA\Property(property="shopping_list_id", type="integer", default=1),
+     *               @OA\Property(property="name", type="string", default="Product Name"),
+     *               @OA\Property(property="qty", type="integer", default=5)
      *            )
      *           )
      *       ),
@@ -120,16 +120,13 @@ class ProductController extends Controller
      *            mediaType="application/json",
      *            @OA\Schema(
      *               type="object",
-     *               @OA\Property(property="shopping_list_id", type="integer"),
-     *               @OA\Property(property="name", type="string"),
-     *               @OA\Property(property="qty", type="integer")
+     *               @OA\Property(property="shopping_list_id", type="integer", default=1),
+     *               @OA\Property(property="name", type="string", default="Product Name 2"),
+     *               @OA\Property(property="qty", type="integer", default=10)
      *            )
      *           )
      *       ),
      * )
-     */
-
-     /**
      * @OA\Patch(
      *      path="/api/products/{id}",
      *      summary="Update a product quantity",
@@ -155,7 +152,7 @@ class ProductController extends Controller
      *            mediaType="application/json",
      *            @OA\Schema(
      *               type="object",
-     *               @OA\Property(property="qty", type="integer")
+     *               @OA\Property(property="qty", type="integer", default=7)
      *            )
      *           )
      *       ),

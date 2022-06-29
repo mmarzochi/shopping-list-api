@@ -80,7 +80,7 @@ class ShoppingListController extends Controller
      *            mediaType="application/json",
      *            @OA\Schema(
      *               type="object",
-     *               @OA\Property(property="name", type="string")
+     *               @OA\Property(property="name", type="string", default="Shopping List Name")
      *            )
      *           )
      *       ),
@@ -119,7 +119,7 @@ class ShoppingListController extends Controller
      *            mediaType="application/json",
      *            @OA\Schema(
      *               type="object",
-     *               @OA\Property(property="name", type="string")
+     *               @OA\Property(property="name", type="string", default="Shopping List Name 2")
      *            )
      *           )
      *      ),

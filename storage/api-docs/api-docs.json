@@ -128,13 +128,16 @@
                             "schema": {
                                 "properties": {
                                     "shopping_list_id": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "default": 1
                                     },
                                     "name": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "default": "Product Name"
                                     },
                                     "qty": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "default": 5
                                     }
                                 },
                                 "type": "object"
@@ -179,6 +182,59 @@
                         "description": "Successful operation"
                     }
                 }
+            },
+            "put": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Update a product",
+                "description": "This API helps you to update a product.",
+                "operationId": "6a7e11900844cd85cff66e662b82bd4c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Unique identifier for the resource",
+                        "required": true,
+                        "style": "form",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "shopping_list_id": {
+                                        "type": "integer",
+                                        "default": 1
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "default": "Product Name 2"
+                                    },
+                                    "qty": {
+                                        "type": "integer",
+                                        "default": 10
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             },
             "delete": {
                 "tags": [
@@ -235,7 +291,8 @@
                             "schema": {
                                 "properties": {
                                     "qty": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "default": 7
                                     }
                                 },
                                 "type": "object"
@@ -282,7 +339,8 @@
                             "schema": {
                                 "properties": {
                                     "name": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "default": "Shopping List Name"
                                     }
                                 },
                                 "type": "object"
@@ -353,7 +411,8 @@
                             "schema": {
                                 "properties": {
                                     "name": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "default": "Shopping List Name 2"
                                     }
                                 },
                                 "type": "object"
