@@ -14,7 +14,7 @@ cp .env.example .env
 ```
 2. 2 - Verify and update **Environment Variables** in your **.env**: 
 
-`DB_HOST`, `DB_PORT`, `DB_USERNAME` and `DB_PASSWORD`
+- `DB_HOST`, `DB_PORT`, `DB_USERNAME` and `DB_PASSWORD`
 
 3. Install all dependencies running
 ```
@@ -26,8 +26,8 @@ php artisan migrate --seed
 ```
 4. 2 - After Running it, a user will be created for using the app. Bellow, you will see the user credentials:
 
-`Email: contato@matheusmarzochi.com.br`
-`Password: password`
+- `Email: contato@matheusmarzochi.com.br`
+- `Password: password`
 
 5. Run `php artisan serve` to start the server listening
 6. Open at http://127.0.0.1:8000/
