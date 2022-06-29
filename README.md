@@ -13,6 +13,7 @@ CREATE DATABASE shopping_list;
 cp .env.example .env
 ```
 2. 2 - Verify and update **Environment Variables** in your **.env**: 
+
 `DB_HOST`, `DB_PORT`, `DB_USERNAME` and `DB_PASSWORD`
 
 3. Install all dependencies running
@@ -24,6 +25,7 @@ composer install
 php artisan migrate --seed
 ```
 4. 2 - After Running it, a user will be created for using the app. Bellow, you will see the user credentials:
+
 `Email: contato@matheusmarzochi.com.br`
 `Password: password`
 
@@ -36,7 +38,9 @@ You can access the documentation on `http://127.0.0.1:8000/api/documentation`
 
 ## Technologies
 **Language:** PHP
+
 **Database:** MySQL
+
 **Framework:** Laravel
 
 ## Testing
